@@ -1,15 +1,15 @@
 
+from src.features.build_features import create_dummy_vars
+from src.data.make_dataset import load_and_preprocess_data
+from src.models.predict_model import evaluate_model
+from src.models.train_model import train_model
 import warnings
 warnings.filterwarnings("ignore")
-from src.models.train_model import train_model
-from src.models.predict_model import evaluate_model
-from src.data.make_dataset import load_and_preprocess_data
-from src.features.build_features import create_dummy_vars
 
 # Set the path to the raw dataset
 data_path = 'data/raw/heart_2020_cleaned.csv'
 
-# Load and preprocess the raw dataset 
+# Load and preprocess the raw dataset
 df = load_and_preprocess_data(data_path)
 
 # Perform one-hot encoding on categorical features and split into x (features) and y (target)
