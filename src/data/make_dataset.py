@@ -2,9 +2,6 @@ import pandas as pd
 
 # Function to load and preprocess heart disease dataset
 def load_and_preprocess_data(data_path):
-    # Read the raw CSV file (this line is redundant and can be removed)
-    df = pd.read_csv('data/raw/heart_2020_cleaned.csv')  
-    
     # Read the actual dataset from the provided path
     df = pd.read_csv(data_path)
 

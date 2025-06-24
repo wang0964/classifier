@@ -13,9 +13,16 @@ def get_required_packages():
 
 def check_package_versions():
     required_packages = get_required_packages()
+
+    package_alias = {
+        'scikit-learn': 'sklearn',
+        'PyYAML': 'yaml',  
+    }
+
     for package_name, required_version in required_packages.items():
         try:
-            module = importlib.import_module(package_name)
+            import_name = package_alias.get(package_name, package_name)
+            module = importlib.import_module(import_name)
             installed_version = module.__version__
             if installed_version != required_version:
                 print(f"Warning: {package_name} version {installed_version} is installed, but version {required_version} is required.")
@@ -23,6 +30,7 @@ def check_package_versions():
             print(f"Error: {package_name} is not installed.")
 
     print("Environment check completed.")
+
 
 if __name__ == '__main__':
     check_package_versions()
