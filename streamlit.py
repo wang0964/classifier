@@ -161,6 +161,6 @@ if submitted:
         st.write("You may not have heart disease.")
 
 st.write(
-    """We used a machine learning (Random Forest) model to predict the probobility of heart disease, the features used in this prediction are ranked by relative
+    """I used a machine learning (Random Forest) model to predict the probobility of heart disease, the features used in this prediction are ranked by relative
     importance below."""
 )
